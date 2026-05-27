@@ -1,4 +1,4 @@
-# Mind Asset Board Prototype
+# UBS Monopoly Prototype
 
 ## 文件说明
 - index.html：主页面结构
