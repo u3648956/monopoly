@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mind Asset Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <section class="panel board-panel">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Single-player prototype</p>
+          <h1>Mind Asset Board</h1>
+          <p class="sub">以單人回合制方式累積心理資產，目標是把 Asset bar 填滿到 20 Gold。</p>
+        </div>
+
+      </header>
+      <div class="board-wrap">
+        <div id="boardGrid" class="board-grid"></div>
+        <div class="center-panel">
+          <p class="eyebrow">Balance of stressor and asset</p>
+          <h2 id="centerTitle">建立你的心理資產</h2>
+          <p id="centerText" class="sub">Investment 累積資源，Scenario 檢查承受力，Reflection Corner 幫助回復平衡。</p>
+          <section class="atm-card">
+            <div class="row-between"><span>ATM / Asset transfer</span><span id="atmValue">5 / 20 Gold</span></div>
+            <div class="asset-track large"><div id="atmFill" class="asset-fill"></div></div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <aside class="panel sidebar-panel">
+      <section>
+        <h2>遊戲狀態</h2>
+        <p class="sub">每張正向卡固定獎勵 5 Gold，Reflection Corner 結束後進入下一輪。</p>
+      </section>
+      <section class="status-grid">
+        <article class="stat-card"><p class="label">Current Gold</p><p id="goldValue" class="value">5</p></article>
+        <article class="stat-card"><p class="label">Round</p><p id="roundValue" class="value">1</p></article>
+        <article class="stat-card"><p class="label">Position</p><p id="positionValue" class="value">0</p></article>
+        <article class="stat-card"><p class="label">State</p><p id="stateValue" class="value">Playing</p></article>
+      </section>
+      <section class="stat-card">
+        <p class="label">Asset Bar</p>
+        <div class="row-between compact-row"><p id="assetPercent" class="value">25%</p><p class="muted">Target: 20 Gold</p></div>
+        <div class="asset-track"><div id="assetBar" class="asset-fill gold"></div></div>
+      </section>
+      <section class="dice-panel">
+        <div id="diceCube" class="dice-cube" aria-label="dice">
+          <span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span>
+          <span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span>
+          <span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span>
+        </div>
+        <div class="dice-info">
+          <p class="label">Dice Result</p>
+          <p id="diceValue" class="dice-value">-</p>
+          <p id="diceHint" class="muted">按下按鈕開始擲骰</p>
+        </div>
+      </section>
+      <button id="rollBtn" class="roll-btn" type="button">擲骰子</button>
+      <section class="log-card">
+        <div class="row-between compact-row"><h3>Event Log</h3><span class="muted">最新 8 條</span></div>
+        <ul id="logList" class="log-list"></ul>
+      </section>
+    </aside>
+  </div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <p id="modalType" class="eyebrow">Event</p>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription" class="sub modal-desc"></p>
+      <div id="modalChoices" class="choices"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
