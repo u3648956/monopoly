@@ -11,29 +11,33 @@
     <section class="panel board-panel">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Single-player prototype</p>
+          <p class="eyebrow">the Hong Kong Society of Psychological Innovation</p>
           <h1>Mind Asset Board</h1>
-          <p class="sub">以單人回合制方式累積心理資產，目標是把 Asset bar 填滿到 20 Gold。</p>
+          <p class="sub">
+          以單人回合制方式累積心理資產，目標是把 Asset bar 填滿到 30 Gold。
+          <span class="sub-en">Accumulate mental assets in a solo turn-based format. Your goal is to fill the Asset Bar up to 30 Gold.</span>
+          </p>
         </div>
 
       </header>
       <div class="board-wrap">
-        <div id="boardGrid" class="board-grid"></div>
-        <div class="center-panel">
-          <p class="eyebrow">Balance of stressor and asset</p>
-          <h2 id="centerTitle">建立你的心理資產</h2>
-          <p id="centerText" class="sub">Investment 累積資源，Scenario 檢查承受力，Reflection Corner 幫助回復平衡。</p>
-          <section class="atm-card">
-            <div class="row-between"><span>ATM / Asset transfer</span><span id="atmValue">5 / 20 Gold</span></div>
-            <div class="asset-track large"><div id="atmFill" class="asset-fill"></div></div>
-          </section>
+        <div id="playerToken" class="player-token"></div>
+      
+        <div class="atm-overlay">
+          <div class="atm-title">Mental Asset ATM</div>
+          <div class="atm-track">
+            <div id="atmFill" class="atm-fill"></div>
+          </div>
+          <div id="atmValue" class="atm-value">5 / 30 Gold</div>
         </div>
       </div>
     </section>
     <aside class="panel sidebar-panel">
       <section>
         <h2>遊戲狀態</h2>
-        <p class="sub">每張正向卡固定獎勵 5 Gold，Reflection Corner 結束後進入下一輪。</p>
+        <p class="sub">每張正向卡固定獎勵 5 Gold，Reflection Corner 結束後進入下一輪。
+        <span class="sub-en">Each positive card grants a fixed reward of 5 Gold. The next round begins after completing the Reflection Corner.</span>
+        </p>
       </section>
       <section class="status-grid">
         <article class="stat-card"><p class="label">Current Gold</p><p id="goldValue" class="value">5</p></article>
@@ -43,7 +47,7 @@
       </section>
       <section class="stat-card">
         <p class="label">Asset Bar</p>
-        <div class="row-between compact-row"><p id="assetPercent" class="value">25%</p><p class="muted">Target: 20 Gold</p></div>
+        <div class="row-between compact-row"><p id="assetPercent" class="value">25%</p><p class="muted">Target: 30 Gold</p></div>
         <div class="asset-track"><div id="assetBar" class="asset-fill gold"></div></div>
       </section>
       <section class="dice-panel">
@@ -55,10 +59,10 @@
         <div class="dice-info">
           <p class="label">Dice Result</p>
           <p id="diceValue" class="dice-value">-</p>
-          <p id="diceHint" class="muted">按下按鈕開始擲骰</p>
+          <p id="diceHint" class="muted">按下按鈕開始擲骰<br><span class="sub-en">Press the button to roll the dice</span></p>
         </div>
       </section>
-      <button id="rollBtn" class="roll-btn" type="button">擲骰子</button>
+      <button id="rollBtn" class="roll-btn" type="button">擲骰子 / Roll Dice</button>
       <section class="log-card">
         <div class="row-between compact-row"><h3>Event Log</h3><span class="muted">最新 8 條</span></div>
         <ul id="logList" class="log-list"></ul>

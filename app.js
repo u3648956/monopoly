@@ -1,59 +1,71 @@
 const boardTiles = [
-  { type: 'start',      name: 'Start Point',       desc: '回合循環起點',       x: 0, y: 9 },
-  // --- left (x=0): y=8 → y=0  #1 ~ #9 ---
-  { type: 'investment', name: 'Investment',        desc: '長期健康 vs 即時滿足', x: 0, y: 8 },
-  { type: 'chance',     name: 'Chance Card',       desc: '獲得正向支持',       x: 0, y: 7 },
-  { type: 'investment', name: 'Investment',        desc: '建立韌性選擇',       x: 0, y: 6 },
-  { type: 'scenario',   name: 'Scenario',          desc: '檢查 Gold 是否足夠', x: 0, y: 5 },
-  { type: 'investment', name: 'Investment',        desc: '照顧自己一次',       x: 0, y: 4 },
-  { type: 'chance',     name: 'Chance Card',       desc: '日常恢復資源',       x: 0, y: 3 },
-  { type: 'investment', name: 'Investment',        desc: '調整生活節奏',       x: 0, y: 2 },
-  { type: 'scenario',   name: 'Scenario',          desc: '心理韌性挑戰',       x: 0, y: 1 },
-  { type: 'reflection', name: 'Reflection Corner', desc: '整理內在感受',       x: 0, y: 0 },
-  // --- botoom (y=9): x=1 → x=9  #10 ~ #18 ---
-  { type: 'special',    name: 'Special Rule',      desc: '前進、停留或獎勵',   x: 1, y: 9 },
-  { type: 'investment', name: 'Investment',        desc: '強化心理儲備',       x: 2, y: 9 },
-  { type: 'chance',     name: 'Chance Card',       desc: '重新補充狀態',       x: 3, y: 9 },
-  { type: 'scenario',   name: 'Scenario',          desc: '承接新的壓力',       x: 4, y: 9 },
-  { type: 'reflection', name: 'Reflection Corner', desc: '失敗後修復與整理',   x: 5, y: 9 },
-  { type: 'investment', name: 'Investment',        desc: '維持正向習慣',       x: 6, y: 9 },
-  { type: 'special',    name: 'Special Rule',      desc: '突發規則效果',       x: 7, y: 9 },
-  { type: 'chance',     name: 'Chance Card',       desc: '重新找到方向',       x: 8, y: 9 },
-  { type: 'scenario',   name: 'Scenario',          desc: '另一個壓力測試',     x: 9, y: 9 },
-  // --- right (x=9): y=8 → y=0  #19 ~ #27 ---
-  { type: 'special',    name: 'Special Rule',      desc: '命運的轉折',         x: 9, y: 8 },
-  { type: 'investment', name: 'Investment',        desc: '找回生活步調',       x: 9, y: 7 },
-  { type: 'chance',     name: 'Chance Card',       desc: '連結支持系統',       x: 9, y: 6 },
-  { type: 'scenario',   name: 'Scenario',          desc: '面對不確定性',       x: 9, y: 5 },
-  { type: 'reflection', name: 'Reflection Corner', desc: '重新檢視目標',       x: 9, y: 4 },
-  { type: 'investment', name: 'Investment',        desc: '接納當下狀態',       x: 9, y: 3 },
-  { type: 'chance',     name: 'Chance Card',       desc: '偶遇正向資源',       x: 9, y: 2 },
-  { type: 'scenario',   name: 'Scenario',          desc: '自我價值考驗',       x: 9, y: 1 },
-  { type: 'reflection', name: 'Reflection Corner', desc: '沉澱與自我對話',     x: 9, y: 0 },
-  // --- top (y=0): x=8 → x=1  #28 ~ #35 ---
-  { type: 'special',    name: 'Special Rule',      desc: '趣味性變化',         x: 8, y: 0 },
-  { type: 'investment', name: 'Investment',        desc: '累積心理資本',       x: 7, y: 0 },
-  { type: 'chance',     name: 'Chance Card',       desc: '小確幸的降臨',       x: 6, y: 0 },
-  { type: 'scenario',   name: 'Scenario',          desc: '壓力總和測試',       x: 5, y: 0 },
-  { type: 'reflection', name: 'Reflection Corner', desc: '更深層次的反思',     x: 4, y: 0 },
-  { type: 'investment', name: 'Investment',        desc: '深耕心理土壤',       x: 3, y: 0 },
-  { type: 'chance',     name: 'Chance Card',       desc: '機會再次降臨',       x: 2, y: 0 },
-  { type: 'scenario',   name: 'Scenario',          desc: '終盤心理考驗',       x: 1, y: 0 }
+  // --- 左下角 1格 (起點) ---
+  { type: 'start', name: 'Start Point', left: '5%', top: '95%' }, // Index 0
+
+  // --- 左側邊緣 8格 (從下往上走) ---
+  { type: 'investment', name: 'Investment', left: '5%', top: '85%' }, // 1
+  { type: 'chance', name: 'Chance Card', left: '5%', top: '75%' }, // 2
+  { type: 'investment', name: 'Investment', left: '5%', top: '65%' }, // 3
+  { type: 'chance', name: 'Chance Card', left: '5%', top: '55%' }, // 4
+  { type: 'investment', name: 'Investment', left: '5%', top: '45%' }, // 5
+  { type: 'scenario', name: 'Scenario', left: '5%', top: '35%' }, // 6
+  { type: 'investment', name: 'Investment', left: '5%', top: '25%' }, // 7
+  { type: 'scenario', name: 'Scenario', left: '5%', top: '15%' }, // 8
+
+  // --- 左上角 1格 (反思角) ---
+  { type: 'blank', name: 'Keep Going', left: '5%', top: '5%' }, // 9
+
+  // --- 頂部邊緣 8格 (從左往右走) ---
+  { type: 'chance', name: 'Chance Card', left: '15%', top: '5%' }, // 10
+  { type: 'investment', name: 'Investment', left: '25%', top: '5%' }, // 11
+  { type: 'scenario', name: 'Scenario', left: '35%', top: '5%' }, // 12
+  { type: 'scenario', name: 'Scenario', left: '45%', top: '5%' }, // 13
+  { type: 'chance', name: 'Chance Card', left: '55%', top: '5%' }, // 14
+  { type: 'investment', name: 'Investment', left: '65%', top: '5%' }, // 15
+  { type: 'special', name: 'Special Rule', left: '75%', top: '5%' }, // 16
+  { type: 'chance', name: 'Chance Card', left: '85%', top: '5%' }, // 17
+
+  // --- 右上角 1格 (無意義格子 Keep Going) ---
+  { type: 'reflection', name: 'Reflection Corner', left: '95%', top: '5%' }, // 18
+
+  // --- 右側邊緣 8格 (從上往下走) ---
+  { type: 'investment', name: 'Investment', left: '95%', top: '15%' }, // 19
+  { type: 'scenario', name: 'Scenario', left: '95%', top: '25%' }, // 20
+  { type: 'special', name: 'Special Rule', left: '95%', top: '35%' }, // 21
+  { type: 'chance', name: 'Chance Card', left: '95%', top: '45%' }, // 22
+  { type: 'scenario', name: 'Scenario', left: '95%', top: '55%' }, // 23
+  { type: 'investment', name: 'Investment', left: '95%', top: '65%' }, // 24
+  { type: 'chance', name: 'Chance Card', left: '95%', top: '75%' }, // 25
+  { type: 'scenario', name: 'Scenario', left: '95%', top: '85%' }, // 26
+
+  // --- 右下角 1格 (同樣是無意義格子 Keep Going) ---
+  { type: 'blank', name: 'Keep Going', left: '95%', top: '95%' }, // 27
+
+  // --- 底部邊緣 8格 (從右往左走) ---
+  { type: 'special', name: 'Special Rule', left: '85%', top: '95%' }, // 28
+  { type: 'investment', name: 'Investment', left: '75%', top: '95%' }, // 29
+  { type: 'chance', name: 'Chance Card', left: '65%', top: '95%' }, // 30
+  { type: 'scenario', name: 'Scenario', left: '55%', top: '95%' }, // 31
+  { type: 'investment', name: 'Investment', left: '45%', top: '95%' }, // 32
+  { type: 'special', name: 'Special Rule', left: '35%', top: '95%' }, // 33
+  { type: 'scenario', name: 'Scenario', left: '25%', top: '95%' }, // 34
+  { type: 'scenario', name: 'Scenario', left: '15%', top: '95%' }  // 35
 ];
+
 const investments = [{
-    title: 'You wake up feeling low energy, you will…',
+    title: 'You wake up feeling low energy, you will… \n 你醒来时感到无精打采，你会……',
     a: 'do 5 minutes of gentle stretching',
     b: 'scroll phone on the bed'
 }, {
-    title: 'You feel overwhelmed by the deadlines, you will…',
+    title: 'You feel overwhelmed by the deadlines, you will… \n 你因為deadline而感到壓力，你會……',
     a: 'create a to-do list for today',
     b: 'avoid everything and doomscroll'
 }, {
-    title: 'You have to sleep early tonight for an important appointment tomorrow, and you feel worried. You will…',
+    title: 'You have to sleep early tonight for an important appointment tomorrow, and you feel worried. You will… \n 因为明天有一个重要的任务，你今晚不得不早睡，你感到担心。你会……',
     a: 'practice deep breathing',
     b: 'watch one more episode of drama'
 }, {
-    title: 'Feeling lonely on a weekend',
+    title: 'Feeling lonely on a weekend \n 你在周末感到孤独',
     a: 'tiring but rewarding: Call your long-lost friend -> might feel awkward at first but you’re able to make a meaningful connection',
     b: 'Instant: Order junk food and binge-watch a show -> comfort but lower physical agility and motivation'
 }, {
@@ -84,8 +96,8 @@ const investments = [{
 const scenarios = [
   {
     title: "You failed a math test you've spent a week revising for, you feel defeated and get anxious whenever you see a math question.",
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: "You restructured your thoughts by telling yourself that one failed test does not mean you're bad at math forever. It is an opportunity to learn from your mistakes. You eventually regained confidence in your mathematical ability.",
     fail: 'You deliberately avoided math due to your fear of failure. The anxiety built up until every new question felt terrifying.',
     reflection: {
@@ -96,8 +108,8 @@ const scenarios = [
   },
   {
     title: 'Your grades in your favourite subject, Chinese, are declining. You once thought you possessed a certain gift for language, but now, facing this reality, you begin to doubt your own ability.',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: "Your Chinese grades declined, and you doubted your gift for language. But you told yourself that a dip in grades doesn't erase your ability — it just means you need to adjust your approach. You kept working, and your confidence slowly returned.",
     fail: "Your Chinese grades declined, and you began doubting your gift for language. You avoided practicing because you feared proving you weren't talented. The doubt grew until every assignment felt like a test of your worth, not your skill.",
     reflection: {
@@ -108,8 +120,8 @@ const scenarios = [
   },
   {
     title: 'You cannot pass the audition for the school basketball team and think you lose your chance to enter in the future.',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You failed the audition and felt crushed. But you stayed with the disappointment, kept practicing anyway, and eventually made the team the next year.',
     fail: "You failed the audition and believed you'd lost your only chance. You quit basketball entirely. Every time you saw a court, you felt the same sting of that single failure.",
     reflection: {
@@ -120,8 +132,8 @@ const scenarios = [
   },
   {
     title: "Your best friend is angry at you but wouldn't tell you the reason, you try to talk to her but she refuses to communicate.",
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: "You managed to calm her down with patience and honesty and she eventually told you the reason she's been distant.",
     fail: 'You kept pushing and talked only about your own feelings which then made her even angrier and more guarded.',
     reflection: {
@@ -132,8 +144,8 @@ const scenarios = [
   },
   {
     title: 'You feel left out of the friend group. You try to initiate a conversation but nobody listens to you.',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You managed to get their attention but talking about things they enjoyed too.',
     fail: 'You tried to speak again but they ignored you and continued with their own conversation.',
     reflection: {
@@ -144,8 +156,8 @@ const scenarios = [
   },
   {
     title: 'You get ghosted by the same friend multiple times. You think the friend does not care about you anymore. ',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You spoke to the friend and asked about what they ghosted you. They explained to you that it was because she/he was busy early on. ',
     fail: 'You ended up ghosting your friend too and eventually distanced yourself. ',
     reflection: {
@@ -156,8 +168,8 @@ const scenarios = [
   },
   {
     title: 'You would love to meet new friends but are anxious to do so.',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You decided to go to an event, introduced yourself and eventually met a bunch of friends.',
     fail: 'You kept overthinking and avoiding conversations, leaving you more anxious than before.',
     reflection: {
@@ -168,8 +180,8 @@ const scenarios = [
   },
   {
     title: 'Your father is upset with your sleep schedule. You explain that you work better at night but your father insists that you should sleep earlier. (Understand his perspective and reevaluate the situation, try to strike a balance between your and your father’s pov)',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You both decided to find a middle ground where together you set plans; earlier bedtime on school nights, flexible hours on days you need to work late.',
     fail: 'You refused to compromise and your father heard it as disrespect so the fight escalates instead of solving anything. ',
     reflection: {
@@ -180,8 +192,8 @@ const scenarios = [
   },
   {
     title: 'Your mother has recently been diagnosed with dementia, and has become increasingly clumsy and agitated but insists she lives alone.',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: "You accepted that you couldn't control her choices, but you could control your response. You visited daily, installed safety rails, and let her keep her independence while quietly preparing for the day she'd need more help.",
     fail: "You avoided the hard conversations, pretended everything was fine, and let her live alone. Months later, you got the call, she'd fallen and couldn't get up. The guilt of waiting too long became heavier than the diagnosis itself.",
     reflection: {
@@ -192,8 +204,8 @@ const scenarios = [
   },
   {
     title: 'Your parents keep comparing you to your sibling, saying that you are not good enough. ',
-    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 10，代表你有足夠心理資本調整焦點。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You refused to carry their measuring stick. You focused on your own path, found people who valued you as you are, and let their words become background noise, not your truth.',
     fail: 'You started believing them. No matter what you achieved, you felt second-best. Years later, you still hear their voice every time you succeed, not pride, just the echo of "not enough."',
     reflection: {
@@ -204,8 +216,8 @@ const scenarios = [
   },
   {
     title: 'You enter the final round of the interview and it is between you and the other candidate. The company chooses another candidate at last.',
-    text: '你擔心會被嚴厲責備或影響成績。若 Gold 至少有 10，代表你能承受這次挫折。',
-    requirement: 10,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: "You told yourself it proved you weren't good enough. You stopped applying anywhere, convinced no one would ever choose you.",
     fail: 'You sat with disappointment, then updated your resume and applied elsewhere. Three months later, you found a better fit.',
     reflection: {
@@ -216,8 +228,8 @@ const scenarios = [
   },
   {
     title: 'Workplace politics have become increasingly unbearable but finding a new job would be difficult under a declining economy.',
-    text: '關係的變化帶來強烈的不安感。若 Gold 至少有 15，才足以穩住自我價值感。',
-    requirement: 15,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You turned the stress into a plan by constantly updating your resume and negotiating your workload so you could survive in the current environment.',
     fail: 'You burned bridges trying to confront people directly and pulled others into gossip which led to you getting fired. ',
     reflection: {
@@ -228,8 +240,8 @@ const scenarios = [
   },
   {
     title: 'Despite putting in tremendous effort in your project, you still receive tough criticism during the meeting, you doubt your ability and feel useless. (You decide that each job has its ups and down and you think of creative strategies to stay far away from workplace politics.)',
-    text: '關係的變化帶來強烈的不安感。若 Gold 至少有 15，才足以穩住自我價值感。',
-    requirement: 15,
+    text: '這讓你感到極度失落，質疑自己的能力。若 Gold 至少有 25，代表你有足夠心理資本調整焦點。\n\nThis makes you feel deeply defeated and question your own ability. Having at least 25 Gold means you have enough psychological capital to refocus.',
+    requirement: 25,
     success: 'You reminded yourself that every job has ups and downs. You took what was useful from the feedback, left the rest, and kept going.',
     fail: 'You stopped trying as hard after that, convinced that no amount of effort would ever be enough.',
     reflection: {
@@ -239,32 +251,36 @@ const scenarios = [
     }
   }
 ];
-const chances = ['你和朋友聊天，重新感到被理解。', '你睡了一個好覺，身心恢復一些。', '你去做運動，壓力稍微釋放。', '你吃了一頓正常的飯，狀態穩定下來。'];
-const reflections = ['你主動找學校輔導員聊聊，得到新的應對角度。', '你和帶領者討論後，發現自己不是只能一個人硬撐。', '你把壓抑的情緒說出來，內在沒有那麼混亂了。'];
+const chances = [
+  '你和朋友聊天，重新感到被理解。\nYou chatted with a friend and felt understood again.',
+  '你睡了一個好覺，身心恢復一些。\nYou had a good night\'s sleep and feel somewhat restored.',
+  '你去做運動，壓力稍微釋放。\nYou exercised and released some stress.',
+  '你吃了一頓正常的飯，狀態穩定下來。\nYou had a proper meal and your state stabilised.'
+];
 const generalReflections = [
   {
-    title: '自我對話時間',
-    text: '你給自己留了一段空白時間，寫下最近的感受，整理了原本紛亂的思緒。',
+    title: '自我對話時間 / Self-Reflection Time',
+    text: '你給自己留了一段空白時間，寫下最近的感受，整理了原本紛亂的思緒。\nYou gave yourself some quiet time, wrote down your recent feelings, and sorted through your scattered thoughts.',
     reward: 5
   },
   {
-    title: '重新檢視目標',
-    text: '你和帶領者討論了目前的目標，確認它們是否仍符合你的價值觀，減輕了盲目追求的焦慮。',
+    title: '重新檢視目標 / Reassess Goals',
+    text: '你和帶領者討論了目前的目標，確認它們是否仍符合你的價值觀，減輕了盲目追求的焦慮。\nYou discussed your current goals with your mentor and confirmed that they still align with your values, reducing the anxiety of pursuing blindly.',
     reward: 5
   },
   {
-    title: '接納當下的情緒',
-    text: '你意識到最近有些疲憊。你允許自己不用總是保持完美，接納了此刻的脆弱。',
+    title: '接納當下的情緒 / Accept Emotions',
+    text: '你意識到最近有些疲憊。你允許自己不用總是保持完美，接納了此刻的脆弱。\nYou realised you were feeling tired recently. You allowed yourself to not always be perfect, and accepted this moment of fragility.',
     reward: 5
   }
 ];
 const specials = [
   {
     title: 'Move Forward',
-    text: '你突然得到一股動力，直接前進 2 格，並觸發該格子的事件。',
+    text: '你突然得到一股動力，直接前進 2 格，並觸發該格子的事件。\nYou suddenly gained momentum and moved forward 2 spaces, triggering the event on that space.',
     apply: (onComplete) => {
       state.position = (state.position + 2) % boardTiles.length;
-      addLog('Special Rule：前進 2 格。');
+      addLog('Special Rule：前進 2 格。\n Special Rule：Move Forward 2 Spaces.');
       updateHUD();       
       setTimeout(() => {
         triggerTile();
@@ -273,7 +289,7 @@ const specials = [
   },
   {
     title: 'Bonus Gold',
-    text: '你意外得到一段喘息空間，獲得 5 Gold。',
+    text: '你意外得到一段喘息空間，獲得 5 Gold。\nYou received 5 Gold unexpectedly.',
     apply: (onComplete) => {
       changeGold(5);
       addLog('Special Rule：Bonus +5 Gold。');
@@ -282,22 +298,22 @@ const specials = [
   },
   {
     title: 'Stress Spike',
-    text: '壓力突然上升，本回合沒有額外收穫，但也沒有額外損失。',
+    text: '壓力突然上升，本回合沒有額外收穫，但也沒有額外損失。\nYou received no additional rewards or penalties.',
     apply: (onComplete) => {
-      addLog('Special Rule：壓力突增，無額外效果。');
+      addLog('Special Rule：壓力突增，無額外效果。\n Special Rule：Stress Spike.');
       if (onComplete) onComplete();
     }
   }
 ];
 const state = {
     gold: 5,
-    maxGold: 20,
+    maxGold: 30,
     position: 0,
     round: 1,
     status: 'Playing',
     locked: false
 };
-const boardGrid = document.getElementById('boardGrid');
+const playerToken = document.getElementById('playerToken');
 const goldValue = document.getElementById('goldValue');
 const roundValue = document.getElementById('roundValue');
 const positionValue = document.getElementById('positionValue');
@@ -306,8 +322,6 @@ const assetPercent = document.getElementById('assetPercent');
 const assetBar = document.getElementById('assetBar');
 const atmFill = document.getElementById('atmFill');
 const atmValue = document.getElementById('atmValue');
-const centerTitle = document.getElementById('centerTitle');
-const centerText = document.getElementById('centerText');
 const diceCube = document.getElementById('diceCube');
 const diceValue = document.getElementById('diceValue');
 const diceHint = document.getElementById('diceHint');
@@ -323,24 +337,12 @@ function randomItem(list) {
     return list[Math.floor(Math.random() * list.length)]
 }
 
-function renderBoard() {
-    const emojiMap = {
-        start: '🏠',
-        investment: '💪',
-        chance: '🎴',
-        scenario: '⚡',
-        reflection: '🧘',
-        special: '🎲'
-    };
-    boardGrid.innerHTML = '';
-    boardTiles.forEach((tile, index) => {
-        const cell = document.createElement('article');
-        cell.className = `tile ${tile.type}` + (index === state.position ? ' current' : '');
-        cell.style.gridColumn = tile.x + 1;
-        cell.style.gridRow = tile.y + 1;
-        cell.innerHTML = `<span class="tile-icon">${emojiMap[tile.type]}</span><span class="tile-index">#${index}</span><strong class="tile-name">${tile.name}</strong><span class="tile-meta">${tile.desc}</span>`;
-        boardGrid.appendChild(cell)
-    })
+function updatePlayerToken() {
+  const currentTile = boardTiles[state.position];
+  if (!currentTile) return;
+
+  playerToken.style.left = currentTile.left;
+  playerToken.style.top = currentTile.top;
 }
 
 function renderDiceFace(value) {
@@ -376,26 +378,40 @@ function updateHUD() {
     assetBar.style.width = `${ratio}%`;
     atmFill.style.width = `${ratio}%`;
     atmValue.textContent = `${state.gold} / ${state.maxGold} Gold`;
-    if (state.gold >= state.maxGold) {
-        centerTitle.textContent = '心理資產已滿格';
-        centerText.textContent = '你已累積足夠的心理資源，能更穩定地回應壓力與挫折。'
-    } else {
-        centerTitle.textContent = '建立你的心理資產';
-        centerText.textContent = 'Investment 負責日常累積，Scenario 檢查承受力，Reflection Corner 在失衡時幫助修復。'
-    }
-    renderBoard()
+
+    updatePlayerToken()
 }
+
+//function showModal(type, title, description, actions) {
+//    modalType.textContent = type;
+//    modalTitle.textContent = title;
+//    modalDescription.textContent = description;
+//    modalChoices.innerHTML = '';
+//    actions.forEach(action => {
+//        const btn = document.createElement('button');
+//        btn.className = 'choice-btn';
+//        btn.type = 'button';
+//        btn.innerHTML = `<strong>${action.label}</strong><span>${action.sub}</span>`;
+//        btn.addEventListener('click', () => {
+//            hideModal();
+//            action.onClick()
+//        });
+//        modalChoices.appendChild(btn)
+//    });
+//    modal.classList.remove('hidden')
+//}
 
 function showModal(type, title, description, actions) {
     modalType.textContent = type;
     modalTitle.textContent = title;
-    modalDescription.textContent = description;
+    // 将 \n 转为 <br>，使双语内容能换行显示
+    modalDescription.innerHTML = description.replace(/\n/g, '<br>');
     modalChoices.innerHTML = '';
     actions.forEach(action => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
         btn.type = 'button';
-        btn.innerHTML = `<strong>${action.label}</strong><span>${action.sub}</span>`;
+        btn.innerHTML = `<strong>${action.label}</strong><span>${action.sub.replace(/\n/g, '<br>')}</span>`;
         btn.addEventListener('click', () => {
             hideModal();
             action.onClick()
@@ -423,10 +439,10 @@ function resetGame() {
     state.status = 'Playing';
     state.locked = false;
     diceValue.textContent = '-';
-    diceHint.textContent = '按下按鈕開始擲骰';
+    diceHint.textContent = '按下按鈕開始擲骰 / Press Roll Button to Roll Dice';
     renderDiceFace(1);
     logList.innerHTML = '';
-    addLog('遊戲重設。起始 Gold = 5，目標是累積到 20 Gold。');
+    addLog('遊戲重設。起始 Gold = 5，目標是累積到 30 Gold。');
     updateHUD()
 }
 
@@ -436,34 +452,12 @@ function changeGold(delta) {
     if (state.gold >= state.maxGold) {
         state.status = 'Won';
         updateHUD();
-        showModal('Victory', 'Asset Bar 已滿', '你已累積 20 Gold，代表成功建立更穩定的心理支持與自我照顧方式。', [{
-            label: '重新開始',
-            sub: '回到起始狀態再次體驗流程。',
+        showModal('Victory', 'Asset Bar 已滿', '你已累積 30 Gold，代表成功建立更穩定的心理支持與自我照顧方式。\n You have accumulated 30 Gold, which means you have successfully built a more stable mental support and self-care system.', [{
+            label: '重新開始Restart',
+            sub: '回到起始狀態再次體驗流程。/n Restart the game from scratch.',
             onClick: resetGame
         }])
     }
-}
-
-function handleInvestment() {
-    state.status = 'Investment';
-    updateHUD();
-    const card = randomItem(investments);
-    showModal('Investment', card.title, '請在「長期心理健康」和「即時滿足」之間做選擇。', [{
-        label: card.a,
-        sub: '建立長期心理健康，+5 Gold，然後進入下一輪。',
-        onClick: () => {
-            addLog(`Investment：${card.a}，+5 Gold。`);
-            changeGold(5);
-            if (state.status !== 'Won') nextRound()
-        }
-    }, {
-        label: card.b,
-        sub: '即時滿足，Gold 不變，直接進入下一輪。',
-        onClick: () => {
-            addLog(`Investment：${card.b}，Gold 不變。`);
-            nextRound()
-        }
-    }])
 }
 
 function handleInvestment() {
@@ -473,7 +467,7 @@ function handleInvestment() {
 
   const optionA = {
     label: card.a,
-    sub: '建立長期心理健康，+5 Gold，然後進入下一輪。',
+    sub: '建立長期心理健康，+5 Gold，然後進入下一輪。\n Build long-term mental health, +5 Gold, then proceed to the next round.',
     onClick: () => {
       addLog(`Investment：${card.a}，+5 Gold。`);
       changeGold(5);
@@ -483,7 +477,7 @@ function handleInvestment() {
 
   const optionB = {
     label: card.b,
-    sub: '即時滿足，Gold 不變，直接進入下一輪。',
+    sub: '即時滿足，Gold 不變，直接進入下一輪。\n Instant satisfaction, Gold does not change, proceed to the next round.',
     onClick: () => {
       addLog(`Investment：${card.b}，Gold 不變。`);
       nextRound();
@@ -495,7 +489,7 @@ function handleInvestment() {
   showModal(
     'Investment', 
     card.title, 
-    '請在「長期心理健康」和「即時滿足」之間做選擇。', 
+    '請在「長期心理健康」和「即時滿足」之間做選擇。\n Please choose between "Long-Term Mental Health" and "Instant Satisfaction"', 
     shuffledOptions
   );
 }
@@ -504,9 +498,9 @@ function handleChance() {
     state.status = 'Chance';
     updateHUD();
     const card = randomItem(chances);
-    showModal('Chance Card', '抽到一張支援卡', card, [{
-        label: '獲得 5 Gold',
-        sub: '正向資源進帳，進入下一輪。',
+    showModal('Chance Card', '抽到一張支援卡\n You drew a Support Card', card, [{
+        label: '獲得5枚金幣 \n Get 5 Gold',
+        sub: '正向資源進帳，進入下一輪。\n Positive resource account, proceed to the next round.',
         onClick: () => {
             addLog(`Chance Card：${card} +5 Gold。`);
             changeGold(5);
@@ -530,10 +524,10 @@ function handleReflection(scenarioCard = null) {
   showModal(
     'Reflection Corner',
     reflectionContent.title,
-    `${reflectionContent.text} \n\n你將獲得 ${reflectionContent.reward} Gold，結束後進入下一輪。`,
+    `${reflectionContent.text} \n\n你將獲得 ${reflectionContent.reward} 枚金幣，結束後進入下一輪。\nYou will receive ${reflectionContent.reward} Gold after this round ends.`,
     [
       {
-        label: `完成反思，+${reflectionContent.reward} Gold`,
+        label: `完成反思，+${reflectionContent.reward} 枚金幣 \n Finish Reflection Corner, +${reflectionContent.reward} Gold`,
         sub: 'Reflection Corner 結束後進入 next round。',
         onClick: () => {
           addLog(`Reflection Corner：${reflectionContent.title} +${reflectionContent.reward} Gold。`);
@@ -551,17 +545,17 @@ function handleScenario() {
     const card = randomItem(scenarios);
     showModal('Scenario', card.title, card.text, [{
         label: `檢查 Gold（需求 ${card.requirement}）`,
-        sub: '系統會判斷你是否有足夠資產承接情境。',
+        sub: '系統會判斷你是否有足夠資產承接情境。\n System will check if you have enough assets to take on the situation.',
         onClick: () => {
             if (state.gold >= card.requirement) {
                 addLog(`Scenario 成功：${card.title}。`);
                 showModal('Scenario Result', '你撐住了', card.success, [{
-                    label: '進入下一輪',
-                    sub: '保持目前 Gold，繼續前進。',
+                    label: '進入下一輪\n Proceed to the next round',
+                    sub: '保持目前 Gold，繼續前進。\n Keep moving forward without any special events.',
                     onClick: nextRound
                 }])
             } else {
-                addLog(`Scenario 失敗：${card.title}，Gold 不足，進入 Reflection Corner。`);
+                addLog(`Scenario 失敗：${card.title}，Gold 不足，進入 Reflection Corner。\n Scenario failed: ${card.title}, Gold is not enough, proceed to Reflection Corner.`);
                 handleReflection(card)
             }
         }
@@ -588,17 +582,25 @@ function handleSpecial() {
 }
 
 function triggerTile() {
-    const tile = boardTiles[state.position];
-    if (tile.type === 'start') {
-        addLog('回到 Start Point，本回合沒有額外事件。');
-        nextRound();
-        return
-    }
-    if (tile.type === 'investment') return handleInvestment();
-    if (tile.type === 'chance') return handleChance();
-    if (tile.type === 'scenario') return handleScenario();
-    if (tile.type === 'reflection') return handleReflection();
-    if (tile.type === 'special') return handleSpecial()
+  const tile = boardTiles[state.position];
+
+  if (tile.type === 'start') {
+    addLog('回到 Start Point，本回合沒有額外事件。\n Back to Start Point, no special event in this round.');
+    nextRound();
+    return;
+  }
+  
+  if (tile.type === 'blank') {
+    addLog(`停在 ${tile.name}！繼續保持前進，本回合無特殊事件。\n Stuck at ${tile.name}, no special event in this round.`);
+    nextRound();
+    return;
+  }
+
+  if (tile.type === 'investment') return handleInvestment();
+  if (tile.type === 'chance') return handleChance();
+  if (tile.type === 'scenario') return handleScenario();
+  if (tile.type === 'reflection') return handleReflection();
+  if (tile.type === 'special') return handleSpecial();
 }
 
 function rollDice() {
@@ -609,7 +611,7 @@ function rollDice() {
     rollBtn.disabled = true;
     diceCube.classList.add('rolling');
     diceValue.textContent = '?';
-    diceHint.textContent = '骰子滾動中：2s';
+    diceHint.textContent = '骰子滾動中：2s\n Rolling...';
     let countdown = 2;
     renderDiceFace(Math.floor(Math.random() * 6) + 1);
     const previewInterval = setInterval(() => {
@@ -618,7 +620,7 @@ function rollDice() {
     const countdownInterval = setInterval(() => {
         countdown -= 1;
         if (countdown > 0) {
-            diceHint.textContent = `骰子滾動中：${countdown}s`
+            diceHint.textContent = `骰子滾動中：${countdown}s \n Rolling...`
         }
     }, 1000);
     setTimeout(() => {
@@ -639,5 +641,5 @@ function rollDice() {
 }
 rollBtn.addEventListener('click', rollDice);
 renderDiceFace(1);
-addLog('遊戲開始。你有 5 Gold，目標是把 Asset bar 填滿到 20 Gold。');
+addLog('遊戲開始。你有 5 枚金幣，目標是把 Asset bar 填滿到 30 枚金幣。\n Game starts. You have 5 Gold, your goal is to fill up the Asset bar to 30 Gold.');
 updateHUD();
