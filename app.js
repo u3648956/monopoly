@@ -52,47 +52,179 @@ const boardTiles = [
   { type: 'scenario', name: 'Scenario', left: '15%', top: '95%' }  // 35
 ];
 
-const investments = [{
-    title: 'You wake up feeling low energy, you will… \n 你醒来时感到无精打采，你会……',
-    a: 'do 5 minutes of gentle stretching',
-    b: 'scroll phone on the bed'
-}, {
-    title: 'You feel overwhelmed by the deadlines, you will… \n 你因為deadline而感到壓力，你會……',
-    a: 'create a to-do list for today',
-    b: 'avoid everything and doomscroll'
-}, {
-    title: 'You have to sleep early tonight for an important appointment tomorrow, and you feel worried. You will… \n 因为明天有一个重要的任务，你今晚不得不早睡，你感到担心。你会……',
-    a: 'practice deep breathing',
-    b: 'watch one more episode of drama'
-}, {
-    title: 'Feeling lonely on a weekend \n 你在周末感到孤独',
-    a: 'tiring but rewarding: Call your long-lost friend -> might feel awkward at first but you’re able to make a meaningful connection',
-    b: 'Instant: Order junk food and binge-watch a show -> comfort but lower physical agility and motivation'
-}, {
+const investments = [
+  {
+    title: 'You wake up feeling low energy, you will…',
+    options: [
+      {
+        label: 'do 5 minutes of gentle stretching',
+        sub: '穩定投入，累積心理資本。\nA steady action that builds your mental assets.',
+        image: './assets/investment-1-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'scroll phone on the bed',
+        sub: '即時舒服，但沒有真正恢復狀態。\nFeels easier now, but does not truly restore your state.',
+        image: './assets/investment-1-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
+    title: 'You feel overwhelmed by the deadlines, you will…',
+    options: [
+      {
+        label: 'create a to-do list for today',
+        sub: '先整理思绪，再逐步处理压力。\nOrganising the day helps reduce pressure step by step.',
+        image: './assets/investment-2-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'avoid everything and doomscroll',
+        sub: '短暂逃避会让焦虑继续累积。\nAvoidance feels instant, but the stress keeps building.',
+        image: './assets/investment-2-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
+    title: 'You have to sleep early tonight for an important appointment tomorrow, and you feel worried. You will…',
+    options: [
+      {
+        label: 'practice deep breathing',
+        sub: '让身体先慢下来，比较容易入睡。\nCalming your body first makes rest easier.',
+        image: './assets/investment-3-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'watch one more episode of drama',
+        sub: '拖延睡觉会让明天更难面对。\nDelaying sleep makes tomorrow harder.',
+        image: './assets/investment-3-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
+    title: 'Feeling lonely on a weekend',
+    options: [
+      {
+        label: 'tiring but rewarding: Call your long-lost friend -> might feel awkward at first but you’re able to make a meaningful connection',
+        sub: '关系需要投入，但会带来真实连结。\nA little effort can rebuild real connection.',
+        image: './assets/investment-4-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'Instant: Order junk food and binge-watch a show -> comfort but lower physical agility and motivation',
+        sub: '舒服是即时的，但恢复是有限的。\nComfort is instant, but the recovery is limited.',
+        image: './assets/investment-4-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
     title: 'A friend calls for emotional support but you’re drained',
-    a: 'Confront her honestly telling her you are not suitable to listen to her vent right now',
-    b: 'Instant gratification: say you’re busy and scroll your phone -> relief now but guilt gonna drain you further'
-}, {
+    options: [
+      {
+        label: 'Confront her honestly telling her you are not suitable to listen to her vent right now',
+        sub: '诚实设立界线，也是在保护自己。\nHonest boundaries protect both sides.',
+        image: './assets/investment-5-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'Instant gratification: say you’re busy and scroll your phone -> relief now but guilt gonna drain you further',
+        sub: '躲开当下压力，但内耗可能更重。\nYou avoid the pressure now, but guilt may linger.',
+        image: './assets/investment-5-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
     title: 'Your room is messy but you are tired, you will…',
-    a: 'Clean a tiny corner for 10 minutes then rest',
-    b: 'Ignore the mess and lie in bed'
-}, {
+    options: [
+      {
+        label: 'Clean a tiny corner for 10 minutes then rest',
+        sub: '小行动也能重新建立掌控感。\nA small action can restore a sense of control.',
+        image: './assets/investment-6-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'Ignore the mess and lie in bed',
+        sub: '问题暂时没消失，环境压力会继续堆积。\nThe mess stays there and keeps adding pressure.',
+        image: './assets/investment-6-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
     title: 'When you feel stuck in a negative thought loop',
-    a: 'write down your thoughts and feelings',
-    b: 'blame your negativity on others'
-}, {
+    options: [
+      {
+        label: 'write down your thoughts and feelings',
+        sub: '写下来能帮你整理情绪。\nWriting helps organise your emotions.',
+        image: './assets/investment-7-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'blame your negativity on others',
+        sub: '情绪转移出去，不等于真的处理了。\nProjecting the feeling does not resolve it.',
+        image: './assets/investment-7-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
     title: 'You are too busy to eat lunch at work',
-    a: 'Eat a quick and light meal',
-    b: 'Skip it entirely'
-}, {
+    options: [
+      {
+        label: 'Eat a quick and light meal',
+        sub: '先补充能量，状态才撑得住。\nA quick meal helps you keep going steadily.',
+        image: './assets/investment-8-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'Skip it entirely',
+        sub: '省了时间，但身体会慢慢透支。\nYou save time now, but your body pays later.',
+        image: './assets/investment-8-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
     title: 'A friend wants you to help with her project but you have multiple deadlines due next week',
-    a: 'Explain her your situation and encourage her to find somebody else to help',
-    b: 'Help her with her work while simultaneously finishing yours'
-}, {
+    options: [
+      {
+        label: 'Explain her your situation and encourage her to find somebody else to help',
+        sub: '清楚表达限制，是成熟的选择。\nExplaining your limits is a healthy choice.',
+        image: './assets/investment-9-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'Help her with her work while simultaneously finishing yours',
+        sub: '看似两边都顾到，但很容易把自己压垮。\nTrying to do both may overload you.',
+        image: './assets/investment-9-b.jpeg',
+        reward: 0
+      }
+    ]
+  },
+  {
     title: 'You are having a huge argument with your friend, you will…',
-    a: 'calm yourself down',
-    b: 'verbally attack her to win the argument'
-}];
+    options: [
+      {
+        label: 'calm yourself down',
+        sub: '先稳住自己，才有机会把话说清楚。\nRegulating yourself first makes repair possible.',
+        image: './assets/investment-10-a.jpeg',
+        reward: 5
+      },
+      {
+        label: 'verbally attack her to win the argument',
+        sub: '赢了当下，不代表关系没受伤。\nWinning the moment can still damage the relationship.',
+        image: './assets/investment-10-b.jpeg',
+        reward: 0
+      }
+    ]
+  }
+];
+
 const scenarios = [
   {
     title: "You failed a math test you've spent a week revising for, you feel defeated and get anxious whenever you see a math question.",
@@ -382,44 +514,51 @@ function updateHUD() {
     updatePlayerToken()
 }
 
-//function showModal(type, title, description, actions) {
-//    modalType.textContent = type;
-//    modalTitle.textContent = title;
-//    modalDescription.textContent = description;
-//    modalChoices.innerHTML = '';
-//    actions.forEach(action => {
-//        const btn = document.createElement('button');
-//        btn.className = 'choice-btn';
-//        btn.type = 'button';
-//        btn.innerHTML = `<strong>${action.label}</strong><span>${action.sub}</span>`;
-//        btn.addEventListener('click', () => {
-//            hideModal();
-//            action.onClick()
-//        });
-//        modalChoices.appendChild(btn)
-//    });
-//    modal.classList.remove('hidden')
-//}
+function showModal(type, title, desc, choices = []) {
+  modalType.textContent = type;       // id="modalType"（eyebrow标签）
+  modalTitle.textContent = title;     // id="modalTitle"
+  modalDescription.innerHTML = desc.replace(/\n/g, '<br>');  // id="modalDescription"
+  modalChoices.innerHTML = '';
 
-function showModal(type, title, description, actions) {
-    modalType.textContent = type;
-    modalTitle.textContent = title;
-    // 将 \n 转为 <br>，使双语内容能换行显示
-    modalDescription.innerHTML = description.replace(/\n/g, '<br>');
-    modalChoices.innerHTML = '';
-    actions.forEach(action => {
-        const btn = document.createElement('button');
-        btn.className = 'choice-btn';
-        btn.type = 'button';
-        btn.innerHTML = `<strong>${action.label}</strong><span>${action.sub.replace(/\n/g, '<br>')}</span>`;
-        btn.addEventListener('click', () => {
-            hideModal();
-            action.onClick()
-        });
-        modalChoices.appendChild(btn)
+  const hasCardImage = choices.some(choice => choice.image);
+  if (hasCardImage) {
+    modalChoices.classList.add('choices--cards');
+  } else {
+    modalChoices.classList.remove('choices--cards');
+  }
+
+  choices.forEach((choice) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+
+    if (choice.image) {
+      button.className = 'choice-card';
+      button.innerHTML = `
+        <div class="choice-card-media">
+          <img src="${choice.image}" alt="${choice.label}" class="choice-card-image">
+        </div>
+        <div class="choice-card-body">
+          <strong>${choice.label}</strong>
+          ${choice.sub ? `<span>${choice.sub.replace(/\n/g, '<br>')}</span>` : ''}
+        </div>
+      `;
+    } else {
+      button.className = 'choice-btn';
+      button.innerHTML = `
+        <strong>${choice.label}</strong>
+        ${choice.sub ? `<span>${choice.sub.replace(/\n/g, '<br>')}</span>` : ''}
+      `;
+    }
+    button.addEventListener('click', () => {
+      hideModal();
+      choice.onClick();
     });
-    modal.classList.remove('hidden')
+    modalChoices.appendChild(button);
+  });
+
+  modal.classList.remove('hidden');
 }
+
 
 function hideModal() {
     modal.classList.add('hidden')
@@ -463,34 +602,28 @@ function changeGold(delta) {
 function handleInvestment() {
   state.status = 'Investment';
   updateHUD();
+
   const card = randomItem(investments);
 
-  const optionA = {
-    label: card.a,
-    sub: '建立長期心理健康，+5 Gold，然後進入下一輪。\n Build long-term mental health, +5 Gold, then proceed to the next round.',
-    onClick: () => {
-      addLog(`Investment：${card.a}，+5 Gold。`);
-      changeGold(5);
-      if (state.status !== 'Won') nextRound();
-    }
-  };
-
-  const optionB = {
-    label: card.b,
-    sub: '即時滿足，Gold 不變，直接進入下一輪。\n Instant satisfaction, Gold does not change, proceed to the next round.',
-    onClick: () => {
-      addLog(`Investment：${card.b}，Gold 不變。`);
-      nextRound();
-    }
-  };
-
-  const shuffledOptions = [optionA, optionB].sort(() => Math.random() - 0.5);
-
   showModal(
-    'Investment', 
-    card.title, 
-    '請在「長期心理健康」和「即時滿足」之間做選擇。\n Please choose between "Long-Term Mental Health" and "Instant Satisfaction"', 
-    shuffledOptions
+    'Investment',
+    card.title,
+    '請選擇你的行動。\nChoose your action.',
+    card.options.map((option) => ({
+      label: option.label,
+      sub: option.sub,
+      image: option.image,
+      onClick: () => {
+        if (option.reward > 0) {
+          addLog(`Investment：你選擇了「${option.label}」，Gold +${option.reward}。`);
+          changeGold(option.reward);
+          if (state.status !== 'Won') nextRound();
+        } else {
+          addLog(`Investment：你選擇了「${option.label}」，Gold 沒有增加。`);
+          nextRound();
+        }
+      }
+    }))
   );
 }
 
