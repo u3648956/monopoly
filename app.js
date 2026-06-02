@@ -672,6 +672,25 @@ function handleReflection(scenarioCard = null) {
   );
 }
 
+const REFLECTION_TILE_INDEX = boardTiles.findIndex(tile => tile.type === "reflection");
+
+function moveToReflectionAndReflect(card) {
+  if (REFLECTION_TILE_INDEX === -1) {
+    addLog("Reflection Corner tile not found.");
+    handleReflection(card);
+    return;
+  }
+
+  state.position = REFLECTION_TILE_INDEX;
+  state.status = "Reflection";
+  updateHUD();
+  addLog(`Scenario failed: ${card.title}, moved to Reflection Corner.`);
+
+  setTimeout(() => {
+    handleReflection(card);
+  }, 500);
+}
+
 function handleScenario() {
     state.status = 'Scenario';
     updateHUD();
@@ -689,7 +708,7 @@ function handleScenario() {
                 }])
             } else {
                 addLog(`Scenario 失敗：${card.title}，Gold 不足，進入 Reflection Corner。\n Scenario failed: ${card.title}, Gold is not enough, proceed to Reflection Corner.`);
-                handleReflection(card)
+                moveToReflectionAndReflect(card);
             }
         }
     }])
