@@ -11,20 +11,22 @@
     <section class="panel board-panel">
       <header class="topbar">
         <div>
-          <p class="eyebrow">the Hong Kong Society of Psychological Innovation</p>
-          <h1>Mind Asset Board</h1>
-          <p class="sub">
-          以單人回合制方式累積心理資產，目標是把 Asset bar 填滿到 30 Gold。
-          <span class="sub-en">Accumulate mental assets in a solo turn-based format. Your goal is to fill the Asset Bar up to 30 Gold.</span>
-          </p>
+          <p class="eyebrow" data-i18n="orgName">the Hong Kong Society of Psychological Innovation</p>
+          <h1 data-i18n="gameTitle">Mind Asset Board</h1>
+          <p class="sub" data-i18n="gameSubtitle">Reach 30 Gold to complete the goal.</p>
         </div>
 
+        <div class="lang-switch">
+          <button id="langZh" class="lang-btn" type="button">中文</button>
+          <button id="langEn" class="lang-btn" type="button">EN</button>
+        </div>
       </header>
+
       <div class="board-wrap">
         <div id="playerToken" class="player-token"></div>
-      
+
         <div class="atm-overlay">
-          <div class="atm-title">Mental Asset ATM</div>
+          <div class="atm-title" data-i18n="atmTitle">Mental Asset ATM</div>
           <div class="atm-track">
             <div id="atmFill" class="atm-fill"></div>
           </div>
@@ -32,43 +34,74 @@
         </div>
       </div>
     </section>
+
     <aside class="panel sidebar-panel">
       <section>
-        <h2>遊戲狀態</h2>
-        <p class="sub">每張正向卡固定獎勵 5 Gold，Reflection Corner 結束後進入下一輪。
-        <span class="sub-en">Each positive card grants a fixed reward of 5 Gold. The next round begins after completing the Reflection Corner.</span>
+        <h2 data-i18n="sidebarTitle">Game Guide</h2>
+        <p class="sub" data-i18n="sidebarDesc">
+          Each positive card grants a fixed reward of 5 Gold. The next round begins after completing the Reflection Corner.
         </p>
       </section>
+
       <section class="status-grid">
-        <article class="stat-card"><p class="label">Current Gold</p><p id="goldValue" class="value">5</p></article>
-        <article class="stat-card"><p class="label">Round</p><p id="roundValue" class="value">1</p></article>
-        <article class="stat-card"><p class="label">Position</p><p id="positionValue" class="value">0</p></article>
-        <article class="stat-card"><p class="label">State</p><p id="stateValue" class="value">Playing</p></article>
+        <article class="stat-card">
+          <p class="label" data-i18n="currentGold">Current Gold</p>
+          <p id="goldValue" class="value">5</p>
+        </article>
+
+        <article class="stat-card">
+          <p class="label" data-i18n="round">Round</p>
+          <p id="roundValue" class="value">1</p>
+        </article>
+
+        <article class="stat-card">
+          <p class="label" data-i18n="position">Position</p>
+          <p id="positionValue" class="value">0</p>
+        </article>
+
+        <article class="stat-card">
+          <p class="label" data-i18n="state">State</p>
+          <p id="stateValue" class="value">Playing</p>
+        </article>
       </section>
+
       <section class="stat-card">
-        <p class="label">Asset Bar</p>
-        <div class="row-between compact-row"><p id="assetPercent" class="value">25%</p><p class="muted">Target: 30 Gold</p></div>
-        <div class="asset-track"><div id="assetBar" class="asset-fill gold"></div></div>
+        <p class="label" data-i18n="assetBar">Asset Bar</p>
+        <div class="row-between compact-row">
+          <p id="assetPercent" class="value">25%</p>
+          <p class="muted" data-i18n="target30">Target 30 Gold</p>
+        </div>
+        <div class="asset-track">
+          <div id="assetBar" class="asset-fill gold"></div>
+        </div>
       </section>
+
       <section class="dice-panel">
         <div id="diceCube" class="dice-cube" aria-label="dice">
           <span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span>
           <span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span>
           <span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span>
         </div>
+
         <div class="dice-info">
-          <p class="label">Dice Result</p>
+          <p class="label" data-i18n="diceResult">Dice Result</p>
           <p id="diceValue" class="dice-value">-</p>
-          <p id="diceHint" class="muted">按下按鈕開始擲骰<br><span class="sub-en">Press the button to roll the dice</span></p>
+          <p id="diceHint" class="muted">Press the button to roll the dice</p>
         </div>
       </section>
-      <button id="rollBtn" class="roll-btn" type="button">擲骰子/ Roll Dice</button>
+
+      <button id="rollBtn" class="roll-btn" type="button" data-i18n="rollDice">Roll Dice</button>
+
       <section class="log-card">
-        <div class="row-between compact-row"><h3>Event Log</h3><span class="muted">最新 8 條</span></div>
+        <div class="row-between compact-row">
+          <h3 data-i18n="eventLog">Event Log</h3>
+          <span class="muted">8</span>
+        </div>
         <ul id="logList" class="log-list"></ul>
       </section>
     </aside>
   </div>
+
   <div id="modal" class="modal hidden">
     <div class="modal-card">
       <p id="modalType" class="eyebrow">Event</p>
@@ -77,6 +110,7 @@
       <div id="modalChoices" class="choices"></div>
     </div>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>

@@ -14,12 +14,33 @@
   --shadow: 0 12px 28px rgba(53, 66, 102, 0.12);
 }
 
-.sub-en {
-  display: block;
-  font-size: 0.82em;
-  color: var(--muted);
-  margin-top: 3px;
-  font-style: italic;
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary);
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: #fffaf2;
+  border-color: var(--primary);
+  box-shadow: 0 8px 18px rgba(31, 58, 147, 0.16);
 }
 
 * {
