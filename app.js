@@ -1534,7 +1534,27 @@ function handleScenario() {
               zh: `情境失敗：${t(card.title)}，金幣不足，前往 反思角。`,
               en: `Scenario failed: ${t(card.title)}, not enough Gold, proceeding to Reflection Corner.`
             });
-            moveToReflectionAndReflect(card);
+            showModal(
+              uiText.scenarioResultType,
+              {
+                zh: '你未能成功應對這個情境',
+                en: 'You failed to handle the scenario'
+              },
+              card.fail,
+              [
+                {
+                  label: {
+                    zh: '前往反思角',
+                    en: 'Go to Reflection Corner'
+                  },
+                  sub: {
+                    zh: '前往反思角並進行反思。',
+                    en: 'Proceed to Reflection Corner for reflection.'
+                  },
+                  onClick: () => moveToReflectionAndReflect(card)
+                }
+              ]
+            );
           }
         }
       }
