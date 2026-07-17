@@ -957,7 +957,7 @@ function t(value) {
 
 const uiText = {
   orgName: {
-    zh: '香港心理創新協會',
+    zh: '香港創新心理學會',
     en: 'the Hong Kong Society of Psychological Innovation'
   },
   gameTitle: {
