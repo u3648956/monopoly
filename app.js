@@ -396,12 +396,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '你汲取了上一次數學測驗未如理想的經驗，今次終於取得理想成績，獲得很大成就感。',
+        en: 'You finally received a good grade on your math test after you learned from the mistakes made in the last test that you failed, giving you a sense of achievement.'
       },
       reward: 5
     }
@@ -426,12 +426,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '雖然你成績持續下滑，但老師特意解釋近期考試難度提升，分數退步是正常的情況，更於課堂上讚賞你的努力，令你重拾自信。',
+        en: 'Although your grades have been declining, the teacher did mention that the recent exams were harder, which is why it is normal to have a decline. Your teacher then praised your efforts in class, boosting your confidence.'
       },
       reward: 5
     }
@@ -456,12 +456,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '你決定向籃球隊成員請教技術與心得。經過一番苦練，球技有所進步，翌年成功入選球隊。',
+        en: 'You decided to ask someone from the basketball team to teach you some tricks and tips, and slowly you got better and got into the team the next year.'
       },
       reward: 5
     }
@@ -486,12 +486,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '朋友就算自己忙到不可開交，都仲特登抽時間關心你、問候你，令你感受到滿滿嘅支持。',
+        en: 'A friend spent time to check in on you even while she/he was busy, making you feel supported.'
       },
       reward: 5
     }
@@ -516,12 +516,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '你投其所好、主動聊起佢哋鍾意嘅話題之後，朋友開始約埋你一齊玩，令你重新感受到同大家嘅連結。',
+        en: 'Your friends included you in their activities after you initiated a conversation with them by talking about things they enjoyed, and you feel connected.'
       },
       reward: 5
     }
@@ -546,12 +546,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '你投其所好、主動聊起佢哋鍾意嘅話題之後，朋友開始約埋你一齊玩，令你重新感受到同大家嘅連結。',
+        en: 'Your friends included you in their activities after you initiated a conversation with them by talking about things they enjoyed, and you feel connected.'
       },
       reward: 5
     }
@@ -576,12 +576,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '你主動上前自我介紹之後，一班新朋友邀請你一齊聚會，令你自覺融入其中。',
+        en: 'A group of new friends invited you to spend time together after you introduced yourself to them and you feel included.'
       },
       reward: 5
     }
@@ -606,12 +606,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '家人在決定調整你的作息時間時，會跟你一起商量，而不是自作主張，讓你感受到被尊重。',
+        en: 'Your family included you in the decision to fine-tune your sleep schedule instead of deciding it by yourself, and you feel respected.'
       },
       reward: 5
     }
@@ -636,12 +636,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '家人尊重了你所設定的界線，讓你有一種被理解的感覺。',
+        en: 'Your family respected a boundary you set, giving you a sense of being understood.'
       },
       reward: 5
     }
@@ -666,12 +666,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '见学校辅导员',
-        en: 'Meet school counsellor'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你主動約見學校輔導員。在引導下，你整理了失落感，也看見除了這所大學外，還有其他能幫助你達成職業目標的路徑。',
-        en: 'You took the initiative to meet with the school counselor. Under guidance, you sorted out your sense of loss and also saw that apart from this university, there are other paths that can help you achieve your career goals.'
+        zh: '家人注意到你付出的努力，而不是盲目地將你和兄弟姊妹比較，讓你覺得被欣賞。',
+        en: 'Your family noticed how hard you’ve been working instead of comparing you to your sibling, which made you feel appreciated.'
       },
       reward: 5
     }
@@ -696,8 +696,8 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '与导师/老师讨论',
-        en: 'Discuss with a mentor / teacher'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
         zh: '你與信任的導師討論。他們分享了自己過去失敗的經驗，讓你知道犯錯是成長的一部分，幫助你放下完美主義。',
@@ -726,12 +726,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '加入一个新的兴趣小组',
-        en: 'Join a new interest group'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你暫時離開壓力源，參加了一個新的興趣小組。在新環境的互動中，你重新肯定了自己的價值，知道自己仍值得被接納。',
-        en: 'You temporarily left the pressure source and joined a new interest group. In the new environment, you re-confirmed your value and knew you were still worth being accepted.'
+        zh: '你汲取過往的教訓並調整工作方式後，終於在工作上獲得正面評價，令你大受鼓舞。',
+        en: 'You finally received positive feedback on your work after you learned from past criticisms, and you feel encouraged.'
       },
       reward: 5
     }
@@ -756,12 +756,12 @@ const scenarios = [
     },
     reflection: {
       title: {
-        zh: '加入一个新的兴趣小组',
-        en: 'Join a new interest group'
+        zh: '反思時刻',
+        en: 'Reflection Moment'
       },
       text: {
-        zh: '你暫時離開壓力源，參加了一個新的興趣小組。在新環境的互動中，你重新肯定了自己的價值，知道自己仍值得被接納。',
-        en: 'You temporarily left the pressure source and joined a new interest group. In the new environment, you re-confirmed your value and knew you were still worth being accepted.'
+        zh: '在你不懈的努力下，上司肯定了你在項目上付出的心血，令你感到受尊重。',
+        en: 'Your boss acknowledged the efforts you put in your project after you kept on trying, and you feel respected.'
       },
       reward: 5
     }
@@ -826,7 +826,7 @@ const chances = [
   },
   {
     zh: '你汲取了上一次數學測驗未如理想的經驗，今次終於取得理想成績，獲得很大成就感。',
-    en: 'AYou finally received a good grade on your math test after you learned from the mistakes made in the last test that you failed, giving you a sense of achievement.'
+    en: 'You finally received a good grade on your math test after you learned from the mistakes made in the last test that you failed, giving you a sense of achievement.'
   },
   {
     zh: '雖然你成績持續下滑，但老師特意解釋近期考試難度提升，分數退步是正常的情況，更於課堂上讚賞你的努力，令你重拾自信。',
