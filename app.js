@@ -640,8 +640,8 @@ const scenarios = [
         en: 'Reflection Moment'
       },
       text: {
-        zh: '家人尊重了你所設定的界線，讓你有一種被理解的感覺。',
-        en: 'Your family respected a boundary you set, giving you a sense of being understood.'
+        zh: '你無法阻止病情惡化，但你可以選擇如何面對。你每日陪伴、默默準備，尊重她的意願之餘也做好最壞的打算。你感到踏實，因為你沒有辜負這份親情。',
+        en: "You can't prevent the condition from worsening, but you can choose how to face it. You accompany her every day, prepare silently, respect her wishes while also being prepared for the worst. You feel at ease because you haven't let down this family affection."
       },
       reward: 5
     }
